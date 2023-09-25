@@ -1,5 +1,6 @@
 import { FaHome, FaHotjar, FaStar } from "react-icons/fa";
 import { MdTheaterComedy } from "react-icons/md";
+import { SiNetflix } from "react-icons/si";
 import {
   GiNinjaHeroicStance,
   GiRomanToga,
@@ -12,14 +13,18 @@ import MenuItem from "./MenuItem";
 function Menus(props) {
   return (
     <MenusPane>
-      <MenuItem name="Home" Icon={FaHome} />
-      <MenuItem name="Trending" Icon={FaHotjar} />
-      <MenuItem name="Top rated" Icon={FaStar} />
-      <MenuItem name="Actions Movies" Icon={GiNinjaHeroicStance} />
-      <MenuItem name="Comedy Movies" Icon={MdTheaterComedy} />
-      <MenuItem name="Horror Movies" Icon={GiGhost} />
-      <MenuItem name="Romance Movies" Icon={GiRomanToga} />
-      <MenuItem name="Documentaries" Icon={GiBandageRoll} />
+      <MenuItem name="Netflix" Icon={SiNetflix} to="netflix" />
+      <MenuItem name="Trending" Icon={FaHotjar} to="trending" />
+      <MenuItem name="Top rated" Icon={FaStar} to="topRated" />
+      <MenuItem
+        name="Actions Movies"
+        Icon={GiNinjaHeroicStance}
+        to="actionMovies"
+      />
+      <MenuItem name="Comedy Movies" Icon={MdTheaterComedy} to="comedyMovies" />
+      <MenuItem name="Horror Movies" Icon={GiGhost} to="horrorMovies" />
+      <MenuItem name="Romance Movies" Icon={GiRomanToga} to="romanceMovies" />
+      <MenuItem name="Documentaries" Icon={GiBandageRoll} to="documentaries" />
     </MenusPane>
   );
 }
@@ -32,7 +37,7 @@ const MenusPane = styled.div`
   top: 20%;
   width: 46px;
   padding: 4px 0;
-  background: rgba(220, 220, 220, 0.3);
+  background: rgba(0, 0, 0, 0.3);
   z-index: 100;
   display: flex;
   flex-direction: column;
@@ -42,7 +47,7 @@ const MenusPane = styled.div`
 
   &:hover {
     width: 180px;
-    background: rgba(220, 220, 220, 0.5);
+    background: rgba(0, 0, 0, 0.5);
   }
 
   .subMenu {
